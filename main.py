@@ -15,7 +15,6 @@ def t():
     with open('t.html', 'r', encoding='utf-8') as stream:
         return stream.read()
 
-@app.route('/')
 @app.route('/main_page')
 def main_page():
     return render_template('main_page.html')
