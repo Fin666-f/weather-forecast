@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/main_page')
 def main_page():
-    return render_template('main_page.html')
+    return render_template('ченовик.html')
 
 
 if __name__ == '__main__':

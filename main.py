@@ -27,10 +27,10 @@ def reg_form():
     elif request.method == 'POST':
         print(request.form['email'])
         print(request.form['password'])
-        print(request.form['class'])
-        print(request.form['file'])
-        print(request.form['about'])
-        print(request.form['accept'])
+        print(request.form['name'])
+        print(request.form['surname'])
+        print(request.form['country'])
+        print(request.form['home'])
         print(request.form['sex'])
         return "Форма отправлена"
 
