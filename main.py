@@ -93,8 +93,8 @@ def data_weather(home):
     humi = observation.humidity
     sunrise_date = observation.sunrise_time(timeformat='date')
     sunrset_date = observation.sunset_time(timeformat='date')
-    sunrise = str(sunrise_date).split()[1].split(':')[0]
-    sunrset = str(sunrset_date).split()[1].split(':')[0]
+    sunrise = str(sunrise_date).split()[1][:8]
+    sunrset = str(sunrset_date).split()[1][:8]
     db_sess = db_session.create_session()
     data = Data(
         tempreture=tempreture,
@@ -102,7 +102,9 @@ def data_weather(home):
         precipitation=precipitation,
         pressure=pressure,
         humidity=humi,
-        home=home
+        home=home,
+        sunrise=sunrise,
+        sunrset=sunrset
     )
     db_sess.add(data)
     db_sess.commit()
